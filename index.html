@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>OUR TWO SKIES · 22 November · Dinajpur</title>
+<title>YOUR TWO SKIES · 22 November · Dinajpur</title>
 <style>
 :root{color-scheme:dark;--bg:#05070f;--fg:#eef1fb;--mut:#8f98b8;--acc:#ff6f9c;--card:#0b1020;--line:#1c2442;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:inherit}html{scroll-padding-top:env(safe-area-inset-top,0px)}
@@ -46,7 +46,7 @@ html{-webkit-text-size-adjust:100%}button{-webkit-tap-highlight-color:transparen
 .info{font-size:13px}.bar{padding:4px 12px 32px}.bar button{width:100%;max-width:340px;min-height:50px}.note{font-size:11px}
 .fin h2{font-size:clamp(24px,8vw,34px)}.fin p{font-size:16px}}
 </style></head><body>
-<header><h1>OUR TWO SKIES</h1><p>22 November · Dinajpur, Bangladesh <span class="beat">♥</span></p></header>
+<header><h1>YOUR TWO SKIES</h1><p>22 November · Dinajpur, Bangladesh <span class="beat">♥</span></p></header>
 <div class="stage">
  <section class="card" id="cL"><h2>Then</h2><div class="year" id="yL">22 Nov 2006</div><canvas id="L"></canvas><div class="info" id="iL"></div></section>
  <section class="card" id="cR"><h2>Now</h2><div class="year" id="yR">22 Nov 2026</div><canvas id="R"></canvas><div class="info" id="iR"></div></section>
@@ -54,7 +54,7 @@ html{-webkit-text-size-adjust:100%}button{-webkit-tap-highlight-color:transparen
 <div class="bar"><button id="go">Travel through 20 years</button>
 <p class="note">Sky as seen looking straight up (centre = overhead, edge = horizon, north at top), drifting in time-lapse from 25.63°N, 88.63°E. Stars: bright-star catalogue with precession, plus the Milky Way band, Andromeda and Triangulum galaxies, Pleiades and more (faint background stars are illustrative). Planets: Keplerian elements (~0.5° accuracy). Moon: low-precision model (~1°).</p></div>
 <div class="finale" id="fin"><svg viewBox="0 0 24 24"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6f9c"/><stop offset="1" stop-color="#8a5cff"/></linearGradient></defs><path fill="url(#g)" d="M12 21s-8.5-5.4-8.5-11.2C3.5 6.6 5.8 4.5 8.3 4.5c1.6 0 3 .8 3.7 2.1.7-1.3 2.100-2.1 3.700-2.100 2.500 0 4.800 2.100 4.800 5.300C20.500 15.600 12 21 12 21z"/></svg>
-<div class="fin"><p><span style="transition-delay:1.6s">Since you arrived, the sky feels gentler—like the stars learned your name.</span><span style="transition-delay:3s">Every night looks softer, like the universe saved its prettiest colors for your smile.</span><span style="transition-delay:4.4s">If the sky could speak, it would thank you for making it beautiful.</span></p><h2 style="transition-delay:6s">Happy Birthday, My Love ♥</h2><button id="back" style="transition-delay:8s">Back to our two skies</button></div></div>
+<div class="fin"><p><span style="transition-delay:1.6s">Since you arrived, the sky feels gentler—like the stars learned your name.</span><span style="transition-delay:3s">Every night looks softer, like the universe saved its prettiest colors for your smile.</span><span style="transition-delay:4.4s">If the sky could speak, it would thank you for making it beautiful.</span></p><h2 style="transition-delay:6s">Happy Birthday, My Love ♥</h2><button id="back" style="transition-delay:8s">Back to your two skies</button></div></div>
 <script>
 const LAT=25.6279,LON=88.6332,D=Math.PI/180;
 const S=[["Sirius",6.752,-16.716,-1.46],["Canopus",6.399,-52.696,-.74],["Arcturus",14.261,19.182,-.05],["Vega",18.616,38.784,.03],["Capella",5.278,45.998,.08],["Rigel",5.242,-8.202,.13],["Procyon",7.655,5.225,.34],["Betelgeuse",5.919,7.407,.42],["Achernar",1.629,-57.237,.46],["Altair",19.846,8.868,.77],["Aldebaran",4.599,16.509,.85],["Antares",16.49,-26.432,1.06],["Spica",13.42,-11.161,.97],["Pollux",7.755,28.026,1.14],["Fomalhaut",22.961,-29.622,1.16],["Deneb",20.69,45.28,1.25],["Regulus",10.14,11.967,1.35],["Castor",7.577,31.888,1.58],["Bellatrix",5.419,6.35,1.64],["Alnilam",5.603,-1.202,1.69],["Alnitak",5.679,-1.943,1.74],["Mintaka",5.533,-.299,2.23],["Polaris",2.53,89.264,1.98],["Dubhe",11.062,61.751,1.79],["Alioth",12.9,55.96,1.77],["Alkaid",13.792,49.313,1.86],["Mizar",13.399,54.925,2.04],["Merak",11.031,56.382,2.37],["Phecda",11.897,53.695,2.44],["Megrez",12.257,57.033,3.31],["Hamal",2.12,23.462,2],["Mirfak",3.405,49.861,1.8],["Algol",3.136,40.956,2.1],["Alpheratz",.14,29.091,2.06],["Mirach",1.162,35.621,2.05],["Almach",2.065,42.33,2.1],["Schedar",.675,56.537,2.24],["Caph",.153,59.15,2.27],["Saiph",5.796,-9.67,2.07],["Sadr",20.37,40.257,2.2],["Shaula",17.56,-37.104,1.62],["Acrux",12.443,-63.099,.76],["Hadar",14.064,-60.373,.61],["Markab",23.079,15.205,2.49],["Scheat",23.063,28.083,2.42],["Algenib",.22,15.184,2.83],["Enif",21.736,9.875,2.39],["Alphard",9.46,-8.659,2],["Elnath",5.438,28.608,1.65],["Nunki",18.921,-26.297,2.05],["Rasalhague",17.582,12.56,2.08],["Alphecca",15.578,26.715,2.23],["Denebola",11.818,14.572,2.14]];
@@ -148,6 +148,6 @@ function frame(t){const dt=Math.min(.05,Math.max(0,(t-last)/1000));last=t;
  draw('L',st.L,t);draw('R',st.R,t);requestAnimationFrame(frame)}
 requestAnimationFrame(frame);
 for(let i=0;i<(LITE?7:14);i++){const h=document.createElement('div');h.className='fh';h.textContent='♥';h.style.cssText='left:'+Math.random()*100+'vw;font-size:'+(10+Math.random()*16)+'px;animation-duration:'+(14+Math.random()*16)+'s;animation-delay:'+(-Math.random()*20)+'s';document.body.appendChild(h)}
-go.onclick=()=>{go.disabled=true;tr={t0:performance.now(),s0:SPIN,done:0}};
+go.onclick=()=>{go.disabled=true;document.getElementById('cL').scrollIntoView({behavior:'smooth',block:'start'});tr={t0:performance.now(),s0:SPIN,done:0}};
 document.getElementById('back').onclick=()=>{fin.classList.remove('on');st.L=2006;tr=null;go.disabled=false};
 </script></body></html>
